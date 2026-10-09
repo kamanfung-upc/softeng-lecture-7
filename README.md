@@ -27,10 +27,11 @@ Maven project with Exercise 1 of the JUnit lab: a library of books with its unit
 | `Book` | 7/7 | 16/16 | 10/12 |
 | `Main` | 0/4 | 0/61 | 0/20 |
 
-`Main` is not tested (see Question 1). The two missing branches of `Book` are in `equals`: comparing a book with an object of another class.
+`Main` is not tested (see Question 1), and the two missing branches of `Book` are in `equals`: comparing a book with an object of another class.
 
 ## Questions
 
 ### 1. Is it easy to test the Main class? Why?
 
-No. `Main` only has a `static main` that reads from the keyboard (`Scanner` on `System.in`) and prints to the screen. It does not return anything and it keeps no state we can look at, so there is nothing to put in an `assertEquals`. To test it we would have to replace `System.in` with a prepared text, capture `System.out` and compare the printed text, and any small change in a menu message would break the test. That is why the logic is in `Library` and `Book`, which take parameters and return values, and `Main` only reads the option and calls them.
+No, `Main` only has a `static main` that reads from the keyboard (`Scanner` on `System.in`) and prints to the screen. It does not return anything and it keeps no state we can look at, so there is nothing to put in an `assertEquals`. 
+To test it we would have to replace `System.in` with a prepared text, capture `System.out` and compare the printed text, and any small change in a menu message would break the test. That is why the logic is in `Library` and `Book`, which take parameters and return values, and `Main` only reads the option and calls them.
